@@ -11,3 +11,5 @@ cl:
 re: cl all
 tst: all
 	wscript.exe test.vbs
+zip: all
+	upx -9 h.exe
