@@ -24,9 +24,9 @@ int wmain(int argc, wchar_t **argv)
 		}
         // wprintf(L"argv[%d]: %s\n", i, argv[i]);
     }
-	wprintf(L"Working Directory: %s\n", cdir);
-	wprintf(L"Executable Name/Path: %s\n", exect);
-	wprintf(L"Command Line Arguments: %s\n", clargs);
+	// wprintf(L"Working Directory: %s\n", cdir);
+	// wprintf(L"Executable Name/Path: %s\n", exect);
+	// wprintf(L"Command Line Arguments: %s\n", clargs);
 	ShellExecuteW(0, L"open", exect, clargs, cdir, SW_HIDE);
 	return 0;
 }

@@ -1,8 +1,7 @@
-﻿CFLG= -s -municode
+﻿CFLG= -s -municode -mwindows
+# Remove -mwindows and it will become console app.
 all: h.o
-	gcc h.o $(CFLG) -o hc
-h: h.o
-	gcc h.o $(CFLG) -mwindows -o h
+	gcc h.o $(CFLG) -o h
 h.o:
 	gcc.cmd -c h.c -o h.o
 cl:
