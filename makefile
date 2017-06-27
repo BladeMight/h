@@ -1,11 +1,13 @@
 ﻿CFLG= -s -municode -mwindows
 # Remove -mwindows and it will become console app.
-all: h.o
-	gcc h.o $(CFLG) -o h
+all: h.o r.o
+	gcc h.o r.o $(CFLG) -o h
 h.o:
-	gcc.cmd -c h.c -o h.o
+	gcc -c h.c -o h.o
+r.o:
+	windres -i r.rc -o r.o
 cl:
-	-@rm -f -r h.o h.exe
+	-@rm -f -r h.o h.exe r.o tst.txt
 re: cl all
 tst: all
-	./h.exe cmd.exe "/c @echo HELLO FROM H!"
+	wscript.exe test.vbs

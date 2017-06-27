@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <io.h>
 #include <fcntl.h>
-
+wchar_t *_wgetcwd(wchar_t *buffer, int maxlen); 
 int wmain(int argc, wchar_t **argv)
 {
 	_setmode(_fileno(stdout), _O_U16TEXT);
@@ -12,7 +12,7 @@ int wmain(int argc, wchar_t **argv)
 	wcscpy(clargs, L"");
 	wchar_t cdir[512];
 	wcscpy(cdir, L"");
-	_wgetcwd(cdir);
+	_wgetcwd(cdir, 512);
     for (int i = 0; i < argc; ++i)
     {
 		if (i == 1)
